@@ -4,5 +4,27 @@ runtime: go
 api_version: go1
 
 handlers:
+- url: /static
+  static_dir: static
+
+
+- url: /api/admin/.*
+  script: _go_app
+  login: admin
+  secure: always
+
+- url: /admin/.*
+  script: _go_app
+  login: admin
+  secure: always
+
+
+- url: /api/.*
+  script: _go_app
+  login: required
+  secure: always
+
 - url: /.*
   script: _go_app
+  login: required
+  secure: always

@@ -14,3 +14,8 @@ indexes:
   ancestor: yes
   properties:
   - name: Time
+
+- kind: User
+  ancestor: yes
+  properties:
+  - name: Name
