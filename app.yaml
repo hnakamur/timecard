@@ -4,8 +4,15 @@ runtime: go
 api_version: go1
 
 handlers:
-- url: /static
+- url: /(.*\.html)$
+  static_files: static/\1
+  upload: static/.*\.html$
+
+- url: /js/
   static_dir: static
+
+- url: /bower_components/
+  static_dir: bower_components
 
 
 - url: /api/admin/.*

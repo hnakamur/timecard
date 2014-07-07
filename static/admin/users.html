@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>User list</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/bower_components/handsontable/dist/jquery.handsontable.full.css">
+<!--[if lt IE 9]>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<h1>User list</h1>
+<div id="table1"></div>
+<script src="/bower_components/underscore/underscore.js"></script>
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/handsontable/dist/jquery.handsontable.full.js"></script>
+<script>
+$(function() {
+  var $container = $('#table1');
+  $container.handsontable({
+    manualColumnResize: true,
+    colWidths: [160, 200, 80],
+    colHeaders: ['Name', 'Email', 'Enabled'],
+    columns: [
+      {data: 'name', type: 'text'},
+      {data: 'email', type: 'text'},
+      {data: 'enabled', type: 'checkbox'}
+    ]
+  });
+  var handsontable = $container.data('handsontable');
+
+  $.getJSON('/api/admin/users', function(data) {
+    handsontable.loadData(data.users);
+  });
+});
+</script>
+</body>
+</html>

@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "jquery": "1.11.1",
-    "handsontable": "~0.10.5"
+    "handsontable": "~0.10.5",
+    "underscore": "~1.6.0"
   }
 }
