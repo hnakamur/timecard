@@ -1,0 +1,13 @@
+{
+  "name": "timecard",
+  "version": "0.0.0",
+  "homepage": "https://github.com/hnakamur/timecard",
+  "authors": [
+    "Hiroaki Nakamura <hnakamur@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "1.11.1",
+    "handsontable": "~0.10.5"
+  }
+}
